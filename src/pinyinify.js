@@ -85,8 +85,10 @@ function shouldPutSpaceBetween(word1, word2) {
 }
 
 function spacePunctuation(text) {
+    if (text){
     return text.replace(/([！？，。：；’”%）]+)([^ ！？，。：；’”%）])/g, (x, p, n) => p + " " + n)
         .replace(/([0-9]+)([^ 0-9\.\?\!\)\]\}！？，。：；’”）%~\@\#\^\&\*])/g, (x, p, n) => p + " " + n);
+    }
 }
 
 module.exports = pinyinify;
